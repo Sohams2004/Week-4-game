@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7472ad95c3636419431a8042231026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 2
+  jumpHeight: 3
   jumpDuration: 0.5
   movementSpeed: 5
   playerRb: {fileID: 2505581325635814251}
