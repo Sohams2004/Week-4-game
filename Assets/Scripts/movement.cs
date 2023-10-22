@@ -12,7 +12,7 @@ public class movement : MonoBehaviour
     private float jumpStartTime;
     private float gravityScale;
 
-    [SerializeField] private Rigidbody2D playerRb;
+    [SerializeField] public Rigidbody2D playerRb;
 
     private void Start()
     {
