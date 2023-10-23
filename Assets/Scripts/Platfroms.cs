@@ -12,6 +12,11 @@ public class Platfroms : MonoBehaviour
     [SerializeField] private movement movement;
     [SerializeField] private movement2 movement2;
 
+    private void Start()
+    {
+        movement2.playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
     void SwitchPlatforms()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))

@@ -8,13 +8,27 @@ public class PauseMenu : MonoBehaviour
    public GameObject PausePanel;
 
 
-    // Update is called once per frame
+    private void Start()
+    {
+        PausePanel.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
     void Update()
     {
-        
+        Pause();
     }
 
     public void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PausePanel.SetActive(true);
+            Time.timeScale = 0;
+        }  
+    }
+
+    public void ButtonPause()
     {
         PausePanel.SetActive(true);
         Time.timeScale = 0;
