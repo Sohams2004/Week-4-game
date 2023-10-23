@@ -33,29 +33,25 @@ public class movement2 : MonoBehaviour
         if (Input.GetButtonDown("Vertical") && !isJumping)
         {
 
+            isJumping = true;
             float initialJumpVelocity = (2 * jumpHeight) / jumpDuration;
 
             playerRb.velocity = new Vector2(playerRb.velocity.x, initialJumpVelocity);
-            isJumping = true;
-            jumpStartTime = Time.time;
 
             jumpSound.Play();
         }
+    }
 
-        if (isJumping)
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
         {
-            
-            float timeSinceJumpStart = Time.time - jumpStartTime;
-            if (timeSinceJumpStart >= jumpDuration)
-            {
-                isJumping = false;
-                playerRb.gravityScale = gravityScale;
-            }
-            else
-            {
-                float gravityEffect = (jumpHeight * 2) / Mathf.Pow(jumpDuration, 2);
-                playerRb.velocity = new Vector2(playerRb.velocity.x, playerRb.velocity.y - gravityEffect * Time.deltaTime);
-            }
+            isJumping = false;
+        }
+
+        if (other.gameObject.CompareTag("Player 1"))
+        {
+            isJumping = false;
         }
     }
 }

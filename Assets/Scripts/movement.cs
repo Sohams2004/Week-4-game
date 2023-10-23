@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class movement : MonoBehaviour
-{ 
+{
     AudioSource jumpSound;
 
-    public float jumpHeight = 4.0f; 
-    public float jumpDuration = 0.5f; 
+    public float jumpHeight = 4.0f;
+    public float jumpDuration = 0.5f;
     public float movementSpeed = 5.0f;
 
-    private bool isJumping = false;
+
+    [SerializeField]private bool isJumping = false;
     private float jumpStartTime;
     private float gravityScale;
 
@@ -26,35 +27,33 @@ public class movement : MonoBehaviour
     private void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        
+
         Vector2 movementVelocity = new Vector2(horizontalInput * movementSpeed, playerRb.velocity.y);
         playerRb.velocity = movementVelocity;
 
-        if (Input.GetButtonDown("Jump") && !isJumping)
+   
+        if (Input.GetButton("Jump") && !isJumping)
         {
-            
+
+            isJumping = true;
             float initialJumpVelocity = (2 * jumpHeight) / jumpDuration;
 
             playerRb.velocity = new Vector2(playerRb.velocity.x, initialJumpVelocity);
-            isJumping = true;
-            jumpStartTime = Time.time;
 
             jumpSound.Play();
         }
+    }
 
-        if (isJumping)
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
         {
-            float timeSinceJumpStart = Time.time - jumpStartTime;
-            if (timeSinceJumpStart >= jumpDuration)
-            {
-                isJumping = false;
-                playerRb.gravityScale = gravityScale;
-            }
-            else
-            {
-                float gravityEffect = (jumpHeight * 2) / Mathf.Pow(jumpDuration, 2);
-                playerRb.velocity = new Vector2(playerRb.velocity.x, playerRb.velocity.y - gravityEffect * Time.deltaTime);
-            }
+            isJumping = false;
+        }
+
+        if (other.gameObject.CompareTag("Player 2"))
+        {
+            isJumping = false;
         }
     }
 }

@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 439343469}
   m_Layer: 0
   m_Name: WallRed
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 847450333}
   m_Layer: 0
   m_Name: FinishLine
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2096,6 +2096,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2050407617696220560, guid: 4bef63f168bb05b41b67cc9e11c47bdf, type: 3}
+      propertyPath: jumpHeight
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2056211209284649709, guid: 4bef63f168bb05b41b67cc9e11c47bdf, type: 3}
       propertyPath: m_Name
       value: PlayerGreen
@@ -2177,6 +2181,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2505581325635814251, guid: b5a03f269570e0042897040b7fda983c, type: 3}
+      propertyPath: m_GravityScale
+      value: 2.03
+      objectReference: {fileID: 0}
     - target: {fileID: 6354483285053389187, guid: b5a03f269570e0042897040b7fda983c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.08
@@ -2218,8 +2226,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7632896181311523620, guid: b5a03f269570e0042897040b7fda983c, type: 3}
+      propertyPath: jumpForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7632896181311523620, guid: b5a03f269570e0042897040b7fda983c, type: 3}
       propertyPath: jumpHeight
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

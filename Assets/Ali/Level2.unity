@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 523766311}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -646,7 +646,7 @@ GameObject:
   - component: {fileID: 726176496}
   m_Layer: 0
   m_Name: WallGreen
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1035,7 +1035,7 @@ GameObject:
   - component: {fileID: 915960738}
   m_Layer: 0
   m_Name: WallRed
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2233,7 +2233,7 @@ GameObject:
   - component: {fileID: 1773024838}
   m_Layer: 0
   m_Name: FinishLine
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

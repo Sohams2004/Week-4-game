@@ -148,7 +148,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: 9bc8e9ffff4b2fd40bf766cd36eae817, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -172,9 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7472ad95c3636419431a8042231026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 3
+  jumpHeight: 1.5
   jumpDuration: 0.5
   movementSpeed: 5
+  isJumping: 0
   playerRb: {fileID: 2505581325635814251}
 --- !u!82 &3261821651857114089
 AudioSource:
