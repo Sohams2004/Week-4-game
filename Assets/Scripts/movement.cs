@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 { 
-    public float jumpHeight = 3.0f; 
+    AudioSource jumpSound;
+
+    public float jumpHeight = 4.0f; 
     public float jumpDuration = 0.5f; 
     public float movementSpeed = 5.0f;
 
@@ -17,6 +19,8 @@ public class movement : MonoBehaviour
     private void Start()
     {
         gravityScale = playerRb.gravityScale;
+
+        jumpSound = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -27,12 +31,15 @@ public class movement : MonoBehaviour
         playerRb.velocity = movementVelocity;
 
         if (Input.GetButtonDown("Jump") && !isJumping)
-        {   
+        {
+            
             float initialJumpVelocity = (2 * jumpHeight) / jumpDuration;
 
             playerRb.velocity = new Vector2(playerRb.velocity.x, initialJumpVelocity);
             isJumping = true;
             jumpStartTime = Time.time;
+
+            jumpSound.Play();
         }
 
         if (isJumping)
